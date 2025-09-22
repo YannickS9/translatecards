@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TranslateCards App Redirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Replace these with your actual store links
+      const iosLink = "https://apps.apple.com/app/id6751719650";
+      const androidLink = "https://play.google.com/store/apps/details?id=com.yannick.translatecards";
+      const fallbackLink = "https://yannicks9.github.io/translatecards/"; // Optional homepage
+
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(ua)) {
+        window.location.href = androidLink;
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.href = iosLink;
+      } else {
+        window.location.href = fallbackLink;
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the correct app store...</p>
+  <p>If you are not redirected automatically, please choose your platform:</p>
+  <ul>
+    <li><a href="https://apps.apple.com/app/id6751719650">Download on iOS</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.yannick.translatecards">Download on Android</a></li>
+  </ul>
+</body>
+</html>
